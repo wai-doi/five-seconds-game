@@ -8,6 +8,8 @@
 
   start.addEventListener('click', function() {
     startTime = Date.now();
+    this.className = 'pushed';
+    stop.className = '';
   });
 
   stop.addEventListener('click', function() {
@@ -15,6 +17,8 @@
     var diff;
     elapsedTime = (Date.now() - startTime) / 1000;
     result.textContent = elapsedTime.toFixed(3);
+    this.className = 'pushed';
+    start.className = '';
     diff = elapsedTime - 5.0;
     if (Math.abs(diff) < 1.0) {
       result.className = 'perfect';
