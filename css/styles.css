@@ -15,11 +15,11 @@
 }
 
 #start{
-  float: right;
+  float: left;
 }
 
 #stop{
-  float: left;
+  float: right;
 }
 
 #start, #stop{
