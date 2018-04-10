@@ -5,16 +5,25 @@
   var stop = document.getElementById('stop');
   var result = document.getElementById('result');
   var startTime;
+  var isStarted = false;
 
   start.addEventListener('click', function() {
+    if (isStarted === true) {
+      return;
+    }
+    isStarted = true;
     startTime = Date.now();
     this.className = 'pushed';
     stop.className = '';
   });
 
   stop.addEventListener('click', function() {
+    if (isStarted === false) {
+      return;
+    }
     var elapsedTime;
     var diff;
+    isStarted = false;
     elapsedTime = (Date.now() - startTime) / 1000;
     result.textContent = elapsedTime.toFixed(3);
     this.className = 'pushed';
